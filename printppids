@@ -1,0 +1,11 @@
+#include <lib.h>
+#include <unistd.h>
+
+int printppid(int idx, int n) {
+	message m;
+	
+	m.m1_i1 = idx;
+	m.m1_i2 = n;
+	
+	return _syscall(PM_PROC_NR, PRINTPPIDs, &m);
+}
